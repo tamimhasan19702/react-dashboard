@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Line= () => {
+const LineCharts = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Line= () => {
   )
 }
 
-export default Line
+export default LineCharts
