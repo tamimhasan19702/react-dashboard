@@ -12,6 +12,8 @@ const Orders = () => {
       <GridComponent
       id='gridcomp'
       dataSource={ordersData}
+      allowPaging
+      allowSorting
       >
         <ColumnsDirective>
         {
@@ -20,6 +22,7 @@ const Orders = () => {
           ))
         }
         </ColumnsDirective>
+        <Inject services={[Resize, Sort, ContextMenu, Filter, Page, ExcelExport, Edit, PdfExport ]}/>
       </GridComponent>
 
     </div>
