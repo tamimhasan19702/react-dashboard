@@ -4,7 +4,7 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import {Navbar, Footer, Sidebar, ThemeSettings} from './components';
-import { Ecommerce,Orders,Calender,Employee,Stacked,Pyramid,Customer,Kanban,Area,Bar,Pie,Financial, ColorPicker, ColorMapping, Editor, Line } from './pages';
+import { Ecommerce,Orders,Calendar,Employee,Stacked,Pyramid,Customer,Kanban,Area,Bar,Pie,Financial, ColorPicker, ColorMapping, Editor, Line } from './pages';
 import { useStateContext } from './contexts/ContextProvider';
 
 
@@ -66,9 +66,9 @@ function App() {
             <Route path='/customers' element={<Customer />}/>
 
             {/* Apps */}
+            <Route path='/calendar' element={<Calendar />}/>
             <Route path='/Kanban' element={<Kanban />}/>
             <Route path='/editor' element={<Editor />}/>
-            <Route path='/calender' element={<Calender />}/>
             <Route path='/color-picker' element={<ColorPicker />}/>
 
             {/* Charts */}
