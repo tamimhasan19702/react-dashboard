@@ -32,7 +32,12 @@ const Sidebar = () => {
         </Link> 
 
          <TooltipComponent content='Menu' position='BottomCenter'>
-          <button type='button' onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block lg:hidden">
+          <button 
+          type='button' 
+          onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} 
+          className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block lg:hidden"
+          style= {{color: currentColor}}
+          >
              <AiOutlineCloseCircle />
           </button>
          </TooltipComponent>
