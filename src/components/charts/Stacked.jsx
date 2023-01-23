@@ -3,7 +3,10 @@ import { ChartComponent,SeriesCollectionDirective, SeriesDirective, Inject, Lege
 
 import { stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis } from '../../assets/dummy'
 
+
 const Stacked = ({width, height}) => {
+
+
   return (
     
     <ChartComponent
