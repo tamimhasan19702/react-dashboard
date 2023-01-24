@@ -3,9 +3,17 @@ import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Dat
 import { lineCustomSeries, LinePrimaryYAxis, LinePrimaryXAxis } from '../../assets/dummy';
 
 
+
 const LineCharts = () => {
   return (
-    <ChartComponent>
+    <ChartComponent
+    id='line-chart'
+    height='420px'
+    primaryXAxis={LinePrimaryXAxis}
+    primaryYAxis={LinePrimaryYAxis}
+    chartArea={{ border: { width: 0 }}}
+    tooltip={{ enable: true }}
+    >
       <Inject services={[LineSeries, DateTime, Legend, Tooltip]}/>
       <SeriesCollectionDirective>
         {
