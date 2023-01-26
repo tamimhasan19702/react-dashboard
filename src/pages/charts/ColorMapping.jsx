@@ -2,17 +2,14 @@ import React from 'react';
 import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, ColumnSeries, Category, Tooltip, Legend, RangeColorSettingsDirective, RangeColorSettingDirective } from '@syncfusion/ej2-react-charts';
 import { colorMappingData, ColorMappingPrimaryXAxis, ColorMappingPrimaryYAxis, rangeColorMapping } from '../../assets/dummy';
 import {ChartsHeader} from '../../components';
-import { useStateContext } from '../../contexts/ContextProvider';
 
 
 
 const ColorMapping = () => {
 
-  const {currentMode} = useStateContext();
-
   return (
     <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
-    <ChartsHeader Category="Color Mapping" title="USA CLIMATE - WEATHER BY MONTH" />
+    <ChartsHeader category="Color Mapping" title="USA CLIMATE - WEATHER BY MONTH" />
     <div className="w-full">
       <ChartComponent
       id='charts'
