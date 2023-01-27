@@ -10,14 +10,14 @@ import avatar from '../assets/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
 
-const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
+const NavButton = ({ title, icon, color, dotColor, customFunc }) => (
 
   <TooltipComponent content={title} position="BottomCenter">
     <button
       type="button"
-      onClick={() => customFunc()}
       style={{ color }}
       className="relative text-xl rounded-full p-3 hover:bg-light-gray"
+      onClick = {() => customFunc()}
     >
       <span
         style={{ background: dotColor }}
@@ -33,7 +33,9 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 
 const Navbar = () => {
 
-  const { currentColor, activeMenu, setActiveMenu, handleClick, isClicked, setScreenSize, screenSize,} = useStateContext();
+
+
+  const { currentColor, activeMenu, setActiveMenu, handleClick, isClicked, setScreenSize, screenSize} = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -45,6 +47,8 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+
+  
   useEffect(() => {
     if (screenSize <= 1000) {
       setActiveMenu(false);
@@ -55,13 +59,15 @@ const Navbar = () => {
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
+
   return (
+
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative w-full">
     
       <div className='lg:invisible'>
       <NavButton 
       title="Menu" 
-      customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} 
+      customFunc={() => handleActiveMenu()} 
       color={currentColor} 
       icon={<AiOutlineMenu />} />
       </div>
@@ -69,7 +75,8 @@ const Navbar = () => {
       <div className="flex">
 
         <NavButton 
-        title="Cart" customFunc={() => handleClick('cart')} 
+        title="Cart" 
+        customFunc={() => handleClick('cart')} 
         color={currentColor} 
         icon={<FiShoppingCart />} 
         />
@@ -84,7 +91,8 @@ const Navbar = () => {
 
         <NavButton 
         title="Notification" 
-        dotColor="rgb(254, 201, 15)" customFunc={() => handleClick('notification')} 
+        dotColor="rgb(254, 201, 15)" 
+        customFunc={() => handleClick('notification')} 
         color={currentColor} 
         icon={<RiNotification3Line />
       } 
@@ -116,6 +124,7 @@ const Navbar = () => {
         {isClicked.chat && (<Chat />)}
         {isClicked.notification && (<Notification />)}
         {isClicked.userProfile && (<UserProfile />)}
+
       </div>
     </div>
   );

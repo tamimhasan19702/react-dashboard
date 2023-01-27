@@ -8,6 +8,7 @@ const initialState = {
     notification: false,
 }
 
+const trueState = true;
 
 export const ContextProvider = ({ children }) => {
     
@@ -17,7 +18,6 @@ export const ContextProvider = ({ children }) => {
     const [currentColor, setCurrentColor] = useState('#03C9D7');
     const [currentMode, setCurrentMode] = useState('Light');
     const [themeSettings, setThemeSettings ] = useState(false);
-
     
     const setMode = (e) => {
         setCurrentMode(e.target.value);
@@ -37,9 +37,10 @@ export const ContextProvider = ({ children }) => {
 
 
     const handleClick = (clicked) => {
-    setIsClicked({ ...initialState, [clicked]:true});
+    setIsClicked({...initialState,[clicked]:trueState});
     }
 
+  
     return (
         <StateContext.Provider
         value={{
@@ -56,7 +57,7 @@ export const ContextProvider = ({ children }) => {
             setThemeSettings,
             setColor,
             setMode,
-            initialState
+            initialState,
         }}>
          {children}
         </StateContext.Provider>
