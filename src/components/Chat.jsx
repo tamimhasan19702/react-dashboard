@@ -18,7 +18,7 @@ const Chat = () => {
        <div className="flex gap-3">
          
           <p className="font-semibold text-lg dark:text-gray-200">Messages</p>
-          <button type="button" className="text-white  text-xs rounded p-1 px-2 bg-orange-500">
+          <button type="button" className="text-white  text-xs rounded p-1 px-2 " style={{ background: currentColor}}>
             5 New
           </button>
         
