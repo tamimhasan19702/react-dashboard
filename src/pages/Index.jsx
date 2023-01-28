@@ -1,4 +1,3 @@
-import { frozenContent } from '@syncfusion/ej2-react-grids';
 
 export { default as Ecommerce } from './Ecommerce';
 export { default as Kanban } from './Kanban';

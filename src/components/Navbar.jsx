@@ -45,7 +45,7 @@ const Navbar = () => {
     handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  });
 
 
   
@@ -55,7 +55,7 @@ const Navbar = () => {
     } else {
       setActiveMenu(true);
     }
-  }, [screenSize]);
+  });
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
