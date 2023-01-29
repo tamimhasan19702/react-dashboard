@@ -8,23 +8,26 @@ import Button from './Button';
 
 const Cart = () => {
 
-  const { currentColor } = useStateContext();
+  const { currentColor, handleClick } = useStateContext();
 
   return (
+
     <div className='bg-half-transparent w-full fixed nav-item top-0 right-0'>
       <div className="float-right h-screen duration-100 ease-in-out dark:text-gray-200 transition-all dark:bg-[#484B52] bg-white md:w-400 p-8">
        <div className="flex justify-between items-center">
         <p className='font-semibold text-lg'> Shopping Cart </p>
 
         <button 
-        icon ={<AiOutlineCloseCircle />}
-        color="rgba(153, 171, 180)"
-        bgHoverColor="light-gray"
-        size='2xl'
-        borderRadius='50%'
-        />
-       {AiOutlineCloseCircle}
+        type='button'
+        className='text-xl rounded-full p-3 hover:bg-light-gray-500 block'
+        onClick={() => handleClick(!'cart')}
+        >
+        <AiOutlineCloseCircle />
+        </button> 
+       
        </div>
+       
+        <div>
        {
         cartData?.map((item, index) => (
           <div key={index}>
@@ -39,9 +42,9 @@ const Cart = () => {
                 <p className='font-semibold text-lg'>{item.price}</p>
                 
                 <div className="flex items-center border-1 border-r-0 border-color rounded">
-                 <p className='p-2 border-r-1 dark:border-gray-600 border-color text-red-600'><AiOutlineMinus /></p>
+                 <p className='p-2 border-r-1 dark:border-gray-600 border-color text-red-600 cursor-pointer'><AiOutlineMinus /></p>
                  <p className='p-2 border-r-1 dark:border-gray-600 border-color text-green-600'>0</p>
-                 <p className='p-2 border-r-1 dark:border-gray-600 border-color text-green-600'><AiOutlinePlus /></p>
+                 <p className='p-2 border-r-1 dark:border-gray-600 border-color text-green-600 cursor-pointer'><AiOutlinePlus /></p>
                 </div>
                 
                 </div>
@@ -50,7 +53,10 @@ const Cart = () => {
             </div>
           </div>
           </div>
-        ))}
+        ))
+       }
+       </div>
+       
 
        <div className="mt-3 mb-3">
        
@@ -78,6 +84,7 @@ const Cart = () => {
 
       </div>
     </div>
+      
   )
 }
 

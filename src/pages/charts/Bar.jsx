@@ -1,8 +1,7 @@
 import React from 'react';
-import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, DateLabel, Category, Tooltip, Legend, ColumnSeries, DataLabel} from '@syncfusion/ej2-react-charts';
+import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Category, Tooltip, Legend, ColumnSeries, DataLabel} from '@syncfusion/ej2-react-charts';
 import { barCustomSeries, barPrimaryXAxis, barPrimaryYAxis } from '../../assets/dummy';
 import { ChartsHeader } from '../../components';
-import { useStateContext } from '../../contexts/ContextProvider';
 
 
 const Bar = () => {
