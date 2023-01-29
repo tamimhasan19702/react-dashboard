@@ -41,7 +41,7 @@ function App() {
       
       {
        activeMenu ? (
-        <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white z-50'>
+        <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
           <Sidebar />
         </div>
        ) : (

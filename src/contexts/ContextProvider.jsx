@@ -1,4 +1,5 @@
 import React, {createContext, useContext, useState} from "react";
+
 const StateContext = createContext();
 
 const initialState = {
@@ -8,7 +9,6 @@ const initialState = {
     notification: false,
 }
 
-const trueState = true;
 
 export const ContextProvider = ({ children }) => {
     
@@ -37,7 +37,7 @@ export const ContextProvider = ({ children }) => {
 
 
     const handleClick = (clicked) => {
-    setIsClicked({...initialState,[clicked]:trueState});
+    setIsClicked({...initialState, [clicked] : true});
     }
 
   
