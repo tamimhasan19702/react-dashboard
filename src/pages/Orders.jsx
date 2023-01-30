@@ -10,9 +10,10 @@ const Orders = () => {
 
 
   return (
-    <div className='m-2 mt-20 md:m-10 p-2 md:p-10 bg-white  rounded-3xl'> 
+    <div className='m-2 mt-10 md:m-10 p-8 md:p-10 bg-white rounded-2xl md:rounded-3xl'> 
       
       <Header category="Page" title="Orders"/>
+
       <GridComponent
       id='gridcomp'
       dataSource={ordersData}
